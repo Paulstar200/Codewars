@@ -8,17 +8,34 @@
 
 function toCamelCase(str) {
     if (str.indexOf('-') > -1) {
+        let stringArray = str.split('-');
+        let updatedArray = [];
 
+        for (let i = 1; i < stringArray.length; i++) {
+            let item = stringArray[i].charAt(0).toUpperCase() + stringArray[i].slice(1);
+            updatedArray.push(item);
+        }
+        updatedArray.unshift(stringArray[0]);
+        return updatedArray.join('')
     } else if (str.indexOf('_') > -1) {
+        let stringArray = str.split('_');
+        let updatedArray = [];
+
+        for (let i = 1; i < stringArray.length; i++) {
+            let item = stringArray[i].charAt(0).toUpperCase() + stringArray[i].slice(1);
+            updatedArray.push(item);
+        }
+        updatedArray.unshift(stringArray[0]);
+        return updatedArray.join('')
 
     } else {
         return "Invalid string";
     }
 }
 
-let paul = toCamelCase("paul otieno")
-console.log(paul)
 
-toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+console.log(toCamelCase("the-stealth-warrior"));
 
-toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+console.log(toCamelCase("The-Stealth-Warrior"));
+console.log(toCamelCase(""));
+
