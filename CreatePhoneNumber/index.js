@@ -40,8 +40,19 @@ function alternativeSolution(numbers) {
     return '(' + numbers.substring(0, 3) + ') ' + numbers.substring(3, 6) + '-' + numbers.substring('6');
 }
 
+function secondAlternative(numbers) {
+    let format = '(xxx) xxx-xxxx';
+
+    numbers.forEach(number => {
+        format = format.replace('x', number);
+    })
+    return format
+}
+
 let myNumbers = createPhoneNumber([1, 2, 3, 5, 1, 1, 8, 2, 9, 1]);
 let alternative = alternativeSolution([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+let secondAlt = secondAlternative([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
 
 console.log(myNumbers);
 console.log(alternative);
+console.log(secondAlt);
