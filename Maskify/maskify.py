@@ -47,4 +47,17 @@ def maskify(cc):
         new_string += item
     return new_string
 
+# Time complexity: O(n) - I think
+# Spac complexity: O(n)^2 - I think
+def maskify_2(cc):
+    if len(cc) == 0:
+        return ''
+    if len(cc) < 4:
+        return cc
+    new_string = cc[0:len(cc)-4]
+    pound_string = "#" * len(new_string)
+    return pound_string + cc[len(cc)-4:]
+
+
 print(maskify('pauldreamer'))
+print(maskify_2('pauldreamer'))
