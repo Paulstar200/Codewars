@@ -16,6 +16,12 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(maskify.maskify_2(''), '')
         self.assertEqual(maskify.maskify_2('Nananananananananananananananana Batman!'), '####################################man!')
 
+    def test_maskify_3(self):
+        self.assertEqual(maskify.maskify_3('4556364607935616'), '############5616')
+        self.assertEqual(maskify.maskify_3('64607935616'), '#######5616')
+        self.assertEqual(maskify.maskify_3('Skippy'), '##ippy')
+        self.assertEqual(maskify.maskify_3(''), '')
+        self.assertEqual(maskify.maskify_3('Nananananananananananananananana Batman!'), '####################################man!')
 
 if __name__ == "__main__":
     unittest.main()
