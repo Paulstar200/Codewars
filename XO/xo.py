@@ -12,5 +12,23 @@ XO("zzoo") => false
 
 """
 
+# Space complexity: O(n)^2
+# Time complexity: O(n)
 def xo(s):
-    return True
+    x_array = []
+    o_array = []
+
+    for i in s:
+        if i.lower() == 'x':
+            x_array.append(i)
+        elif i.lower() == 'o':
+            o_array.append(i)
+        else:
+            continue
+
+    if len(x_array) != len(o_array):
+        return False
+    else:
+        return True
+
+print(xo("zpzpzpp"))
