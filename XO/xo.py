@@ -31,4 +31,9 @@ def xo(s):
     else:
         return True
 
+# Space complexity: O(1)
+# Time complexity: O(log(n))
+def xo_2(s):
+    return s.lower().count('x') == s.lower().count('o')
+
 print(xo("zpzpzpp"))
