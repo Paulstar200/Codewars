@@ -16,5 +16,26 @@ likes(["Alex", "Jacob", "Mark", "Max"]) # must be "Alex, Jacob and 2 others like
 For 4 or more names, the number in and 2 others simply increases.
 
 """
+
+"""
+Methodology 1:
+1. If names = 1 - Print the person
+2. If names = 2 - Print the persons
+3. If names = 3 - Priint the persons
+4. Loop through the items from the third index and print the number of people who like it
+"""
+# Space Complexity: O(1) - Constant.
+# Time Complexity: O(1) - I think
 def likes(names):
-    pass
+    if len(names) == 0:
+        return "no one likes this"
+    elif len(names) == 1:
+        return "{} likes this".format(names[0])
+    elif len(names) == 2:
+        return "{} and {} like this".format(names[0], names[1])
+    elif len(names) == 3:
+        return "{}, {} and {} like this".format(names[0], names[1], names[2])
+    else:
+        return  "{}, {} and {} others like this".format(names[0], names[1], len(names[2:]))
+
+print(likes(['Paul', 'Otieno']))
